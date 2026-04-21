@@ -16,7 +16,7 @@ public class InputValidation {
     // 나이 검증 : 0세~ 120세 사이 값이 들어와야 함.
     public void ageCheck(int age) throws MyException {
         if (age < 0 || age > 120) {
-            throw new MyException("※ 나이는 0세부터 120세까지 입니다.")
+            throw new MyException("※ 나이는 0세부터 120세까지 입니다.");
         }
     }
     // 전화번호 검증 : 형식 체크 (010-xxxx-xxxx)만 입력 가능
