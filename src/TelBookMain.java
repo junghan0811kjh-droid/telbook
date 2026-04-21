@@ -1,5 +1,7 @@
 import db.DBConn;
 import exception.MyException;
+import repository.TelbookRepository;
+import service.TelbookService;
 import view.UserView;
 
 import javax.security.sasl.SaslClient;
@@ -11,9 +13,11 @@ public class TelBookMain {
 //        Connection connection = DBConn.getConnection();
 
         Scanner sc = new Scanner(System.in);
+        TelbookRepository repository = new TelbookRepository();
+        TelbookService service = new TelbookService(repository);
 
         // UserView 인스턴스 생성
-        UserView userView = new UserView(sc);
+        UserView userView = new UserView(sc, service);
 
         int input;
         while (true) {
