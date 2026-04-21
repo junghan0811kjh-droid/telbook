@@ -1,10 +1,11 @@
+import exception.MyException;
 import view.UserView;
 
 import javax.security.sasl.SaslClient;
 import java.util.Scanner;
 
 public class TelBookMain {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws MyException {
         Scanner sc = new Scanner(System.in);
 
         // UserView 인스턴스 생성
