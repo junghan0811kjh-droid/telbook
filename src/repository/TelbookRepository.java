@@ -102,12 +102,32 @@ public class TelbookRepository {
                 // 만들어진 dto를 List에 담는다.
                 dtoList.add(dto);
             }
-
+            psmt.close();
+            rs.close();
         } catch (Exception e) {
             System.out.println("Find All Error : " + e.getMessage());
         }
         return dtoList;
     }
+
+    public int deleteById(int id) {
+
+        PreparedStatement psmt = null;
+
+        ResultSet rs = null;
+
+        int result = 0;
+        try {
+            String sql = "DELETE FROM telbook WHERE id=?";
+            psmt = conn.prepareStatement(sql);
+            psmt.setInt(1, id);
+            result = psmt.executeUpdate();
+            psmt.close();
+        } catch (Exception e) {
+            System.out.println("INSERT 오류 : " + e.getMessage());
+        }
+        return result;
     }
+}
 
 

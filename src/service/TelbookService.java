@@ -31,4 +31,7 @@ public class TelbookService {
         return repository.findById(id);
     }
 
+    public int delete(int id) {
+        return repository.deleteById(id);
+    }
 }
