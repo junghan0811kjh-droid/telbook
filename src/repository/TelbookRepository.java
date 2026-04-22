@@ -108,6 +108,25 @@ public class TelbookRepository {
         }
         return dtoList;
     }
+
+    public int deleteById(int id) {
+
+        PreparedStatement psmt = null;
+
+        ResultSet rs = null;
+
+        int result = 0;
+        try {
+            String sql = "DELETE FROM telbook WHERE id=?";
+            psmt = conn.prepareStatement(sql);
+            psmt.setInt(1, id);
+            result = psmt.executeUpdate();
+            psmt.close();
+        } catch (Exception e) {
+            System.out.println("INSERT 오류 : " + e.getMessage());
+        }
+        return result;
     }
+}
 
 
