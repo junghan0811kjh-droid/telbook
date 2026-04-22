@@ -102,7 +102,8 @@ public class TelbookRepository {
                 // 만들어진 dto를 List에 담는다.
                 dtoList.add(dto);
             }
-
+            psmt.close();
+            rs.close();
         } catch (Exception e) {
             System.out.println("Find All Error : " + e.getMessage());
         }
